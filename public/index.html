@@ -4,9 +4,317 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>VITA Dentistry — Grand Inauguration Showcase</title>
+  <meta name="description" content="Grand Inauguration of VITA Dentistry — Centre for Neuromuscular & Airway Dentistry. RSVP, services, map, reviews and printable invite." />
+  <style>
+    :root{--bg:#fff;--accent:#7b2b6f;--muted:#6b6b6b;--card:#fff}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:#222;background:var(--bg)}
+    .wrap{min-height:100%;display:flex;flex-direction:column}
+    header.hero{position:relative;display:grid;place-items:center;min-height:86vh;background:linear-gradient(180deg,#fffefe,#fff6fb);overflow:hidden;padding:40px}
+    .hero-inner{display:flex;gap:36px;align-items:center;max-width:1200px;padding:2rem;width:100%;}
+    .hero-text{max-width:640px}
+    h1{font-size:clamp(26px,4vw,44px);margin:0 0 12px 0;color:var(--accent);letter-spacing:1px}
+    p.lead{color:var(--muted);margin:0 0 20px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(123,43,111,0.12)}
+    .card{flex:1;min-height:360px;background:linear-gradient(180deg,#fff,#fff);border-radius:14px;padding:18px;box-shadow:0 14px 30px rgba(17,17,17,0.06);display:flex;flex-direction:column}
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .service-box{padding:12px;border-radius:10px;border:1px dashed rgba(123,43,111,0.06)}
+    .small{color:var(--muted);font-size:14px}
+    .invite{display:flex;flex-direction:column;gap:8px}
+    .rsvp{display:flex;gap:8px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #eee;width:100%;box-sizing:border-box}
+    footer{padding:20px;background:#fff;border-top:1px solid #f1f1f1;margin-top:auto}
+    .print-invite{border:1px solid #f0e8ef;border-radius:8px;padding:12px;background:linear-gradient(180deg,#fff,#fffefc)}
+
+    /* Carousel */
+    .carousel{position:relative;border-radius:10px;overflow:hidden;border:1px solid #f4e4f4}
+    .slides{display:flex;transition:transform .38s cubic-bezier(.2,.8,.2,1);will-change:transform}
+    .slide{min-width:100%;box-sizing:border-box;display:grid;place-items:center;background:#faf6fb;height:320px}
+    .slide img{width:100%;height:100%;object-fit:cover}
+    .carousel-controls{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+    .control{pointer-events:auto;background:rgba(255,255,255,0.85);border-radius:999px;border:0;padding:8px 10px;margin:0 8px;cursor:pointer}
+    .dots{display:flex;gap:8px;justify-content:center;padding:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#eee}
+    .dot.active{background:var(--accent)}
+
+    /* Video */
+    .video-wrap{position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden}
+    .video-wrap iframe, .video-wrap video{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    /* Map */
+    .map-wrap{border-radius:10px;overflow:hidden;border:1px solid #f0e6f0}
+    .map-cta{display:flex;justify-content:space-between;align-items:center;padding:8px}
+    .map-cta a{color:var(--accent);text-decoration:none;font-weight:600}
+
+    @media (max-width:880px){.hero-inner{flex-direction:column}.services{grid-template-columns:1fr}.slide{height:220px}}
+  </style>
 </head>
 <body>
-  <h1>VITA Dentistry Showcase</h1>
-  <p>This is a placeholder for the showcase project. Replace with full HTML from earlier.</p>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>VITA DENTISTRY</h1>
+          <div style="font-weight:600;color:#333;margin-bottom:8px">Centre for Neuromuscular & Airway Dentistry</div>
+          <p class="lead">You are cordially invited to the Grand Inaugural Ceremony of VITA Dentistry. Explore our services, RSVP for the opening and download a printable invitation for guests.</p>
+          <div class="cta">
+            <button class="btn" id="rsvpOpen">RSVP / Invite</button>
+            <button class="btn ghost" id="downloadInvite">Download Invite (PDF)</button>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">Event: <strong>23rd Sep, 2025 — Tuesday @ 5:00 PM onwards</strong></div>
+          <div style="margin-top:6px;color:var(--muted);font-size:14px">Venue: Plot No. 162/B/5, Behind Axis Bank Beside Nagappan Katti, Bagalkot - 587101</div>
+        </div>
+
+        <aside class="card">
+          <h3 style="color:var(--accent);margin:0 0 8px">Inauguration Details</h3>
+          <div class="small">INAUGURATION BY</div>
+          <div style="font-weight:700;margin-top:6px">Dr. Santosh B. Chimmanakatti</div>
+          <div class="small">Orthopedic Surgeon, Ashirwad Hospital</div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid #f4e9f3" />
+
+          <div class="small">With Warm Greetings</div>
+          <div style="font-weight:700;margin-top:6px">Dr. Santosh C. Kamble</div>
+          <div class="small">Dental Surgeon — Certified Neuromuscular & Airway Dentist</div>
+          <div class="small" style="margin-top:8px">Email: vitadentalbgk@gmail.com<br/>Cell: +91 95021 92134</div>
+
+          <div style="margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between">
+            <small class="small">Printable invite at the bottom — tear-off RSVP included</small>
+            <button class="btn ghost" id="mapBtn">Open Map</button>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main style="padding:28px 20px">
+      <section style="max-width:1200px;margin:0 auto;display:grid;gap:18px">
+
+        <!-- Carousel: Images (accessible + swipe) -->
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+          <h3 style="color:var(--accent);margin-top:0">Photos & Video</h3>
+          <p class="small">Swipe or click arrows to navigate. Replace the image URLs below with your high-res photos. The video below is a YouTube placeholder; replace with your VIDEO_ID or an MP4 file.</p>
+
+          <div class="carousel" id="carousel" aria-roledescription="carousel">
+            <div class="slides" id="slides">
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <img data-src="/assets/reception-1600.jpg" alt="Reception - VITA Dentistry" class="lazy">
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <img data-src="/assets/operatory-1600.jpg" alt="Operatory - VITA Dentistry" class="lazy">
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <img data-src="/assets/team-1600.jpg" alt="Team - VITA Dentistry" class="lazy">
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="control" id="prevBtn" aria-label="Previous slide">‹</button>
+              <button class="control" id="nextBtn" aria-label="Next slide">›</button>
+            </div>
+            <div class="dots" id="dots" role="tablist"></div>
+          </div>
+
+          <div style="margin-top:12px" class="video-wrap">
+            <iframe id="introVideo" loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;modestbranding=1" title="VITA Dentistry Intro Video" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Main content split: services + map/reviews -->
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+          <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+            <h3 style="color:var(--accent);margin-top:0">Our Services — At a glance</h3>
+            <div class="services">
+              <div class="service-box">
+                <strong>Neuromuscular & Airway Dentistry</strong>
+                <ul class="small">
+                  <li>Temporomandibular Disorders (TMD / TMJ Dysfunction)</li>
+                  <li>Head & Neck Pain Care (Jaw pain, migraines, cervical pain)</li>
+                  <li>Posture correction & Functional Jaw Orthopedics</li>
+                  <li>Dental Sleep Medicine (Snoring & Obstructive Sleep Apnea)</li>
+                </ul>
+              </div>
+
+              <div class="service-box">
+                <strong>Advanced AI Guided Implantology & Prosthodontics</strong>
+                <ul class="small">
+                  <li>Guided dental implantology with AI precision planning</li>
+                  <li>Single & multiple tooth replacement</li>
+                </ul>
+              </div>
+
+              <div class="service-box">
+                <strong>Orthodontics & Growth Guidance</strong>
+                <ul class="small">
+                  <li>Preventive & interceptive orthodontics</li>
+                  <li>Clear aligners & braces</li>
+                </ul>
+              </div>
+
+              <div class="service-box">
+                <strong>Digital & Modern Dentistry</strong>
+                <ul class="small">
+                  <li>Digital smile designing (DSD) with AI-enhanced aesthetics</li>
+                  <li>3D CBCT imaging-assisted virtual treatment planning</li>
+                </ul>
+              </div>
+
+              <div class="service-box">
+                <strong>General & Preventive Dentistry</strong>
+                <ul class="small">
+                  <li>Comprehensive oral check-ups</li>
+                  <li>Restorative dentistry (Fillings, crowns & bridges)</li>
+                </ul>
+              </div>
+
+              <div class="service-box">
+                <strong>Cosmetic Dentistry</strong>
+                <ul class="small">
+                  <li>Smile makeovers & teeth whitening</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside style="display:flex;flex-direction:column;gap:12px">
+            <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+              <h4 style="margin:0;color:var(--accent)">Opening Ceremony Timeline</h4>
+              <div class="small" style="margin-top:8px">
+                <strong>5:00 PM</strong> — Welcome & Ribbon Cutting<br/>
+                <strong>5:30 PM</strong> — Guided tour of the centre<br/>
+                <strong>6:15 PM</strong> — Press meet & refreshments
+              </div>
+            </div>
+
+            <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+              <h4 style="margin:0;color:var(--accent)">Map — Where to find us</h4>
+
+              <!-- Official embed: replace the src below with the exact iframe you get from Google Maps "Share -> Embed a map" for the place.
+                   If you want, paste the full iframe src here and it will show the place-specific pb value and pin.
+
+                   Example (replace the src value with the one from Google Maps):
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                   If you prefer not to copy-paste, another option is to use the Maps Embed API which needs an API key (server-side or restricted key):
+                   https://developers.google.com/maps/documentation/embed/get-started
+                   Example:
+                   <iframe width="600" height="450" style="border:0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=place_id:PLACE_ID"></iframe>
+              -->
+
+              <div class="map-wrap" id="mapWrap">
+                <!-- Default: address-based embed (works without API key) replaced earlier — still acceptable but less precise than share/embed. -->
+                <iframe id="mapIframe" loading="lazy" width="100%" height="220" style="border:0" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Plot%20No.%20162%2FB%2F5%2C%20Behind%20Axis%20Bank%20Beside%20Nagappan%20Katti%2C%20Bagalkot%20587101&output=embed"></iframe>
+                <div class="map-cta">
+                  <small class="small">Pin: Plot No. 162/B/5, Bagalkot</small>
+                  <a href="https://maps.app.goo.gl/sPrz3pg7hjVrx9J8A" target="_blank" rel="noopener">Open in Google Maps</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+              <h4 style="margin:0;color:var(--accent)">Contact</h4>
+              <div class="small" style="margin-top:8px">Email: vitadentalbgk@gmail.com<br/>Phone: +91 95021 92134</div>
+            </div>
+
+          </aside>
+        </div>
+
+        <div style="display:flex;gap:18px;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+            <h3 style="color:var(--accent);margin-top:0">Invitation & RSVP</h3>
+            <p class="small">Fill the RSVP or download a printable invitation with a tear-off RSVP slip for handing out to guests.</p>
+            <div class="print-invite" id="printInvite">
+              <strong style="display:block;margin-bottom:6px">Grand Inaugural Ceremony of VITA Dentistry</strong>
+              <div class="small">23rd Sep, 2025 — 5:00 PM onwards<br/>Plot No. 162/B/5, Behind Axis Bank Beside Nagappan Katti, Bagalkot - 587101</div>
+
+              <div style="margin-top:10px;border-top:1px dashed #f0e0f0;padding-top:10px">
+                <div class="small">To: ________________________________</div>
+                <div class="small">Contact: ____________________________</div>
+              </div>
+
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <button class="btn" id="printBtn">Print Invite</button>
+                <button class="btn ghost" id="sendRsvpBtn">Send RSVP</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="width:320px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+            <h3 style="color:var(--accent);margin-top:0">Google Reviews</h3>
+            <div id="reviews" class="small">Sample reviews shown here. Replace with a secure server-side Google Places integration for real reviews and star ratings.</div>
+            <div style="margin-top:12px;text-align:right"><button class="btn ghost" id="viewGoogle">View on Google</button></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <strong>VITA Dentistry</strong><div class="small">Centre for Neuromuscular & Airway Dentistry</div>
+        </div>
+        <div class="small">© 2025 VITA Dentistry — All rights reserved</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // CAROUSEL: lightweight, accessible, keyboard + swipe support
+    (function(){
+      const slides = document.getElementById('slides');
+      const slideCount = slides.children.length;
+      const prev = document.getElementById('prevBtn');
+      const next = document.getElementById('nextBtn');
+      const dots = document.getElementById('dots');
+      let index = 0;
+      let startX = 0, currentX = 0, dragging = false;
+
+      // create dots
+      for(let i=0;i<slideCount;i++){const d=document.createElement('button');d.className='dot';d.setAttribute('aria-label','Go to slide '+(i+1));d.addEventListener('click',()=>goTo(i));dots.appendChild(d)}
+      updateDots();
+
+      function goTo(i){index = (i+slideCount)%slideCount; update();}
+      function prevSlide(){goTo(index-1)}
+      function nextSlide(){goTo(index+1)}
+
+      prev.addEventListener('click',prevSlide);
+      next.addEventListener('click',nextSlide);
+
+      // keyboard
+      document.addEventListener('keydown', e=>{if(e.key==='ArrowLeft')prevSlide(); if(e.key==='ArrowRight')nextSlide()});
+
+      // swipe
+      slides.addEventListener('touchstart',e=>{startX = e.touches[0].clientX; dragging=true});
+      slides.addEventListener('touchmove',e=>{if(!dragging) return; currentX = e.touches[0].clientX});
+      slides.addEventListener('touchend',e=>{dragging=false; if(startX - currentX > 50) nextSlide(); else if(currentX - startX > 50) prevSlide(); startX = currentX = 0});
+
+      function update(){slides.style.transform = 'translateX(-'+(index*100)+'%)'; updateDots();}
+      function updateDots(){Array.from(dots.children).forEach((d,i)=>d.classList.toggle('active', i===index))}
+
+      // lazy load images as they enter view (simple)
+      const lazyImgs = document.querySelectorAll('img.lazy');
+      const obs = new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const img = entry.target; img.src = img.dataset.src; img.classList.remove('lazy'); obs.unobserve(img)}})} ,{root:null,rootMargin:'200px'});
+      lazyImgs.forEach(i=>obs.observe(i));
+
+      // init
+      update();
+    })();
+
+    // Map: helper to replace the default iframe with an exact place embed (pb=) — paste the iframe src from Google Maps Share -> Embed
+    // Example use: call setPlaceEmbed('https://www.google.com/maps/embed?pb=!1m18!...');
+    function setPlaceEmbed(src){const iframe = document.getElementById('mapIframe'); iframe.src = src;}
+
+    // Button hooks
+    document.getElementById('mapBtn').addEventListener('click',()=>{window.open('https://maps.app.goo.gl/sPrz3pg7hjVrx9J8A','_blank');});
+    document.getElementById('printBtn').addEventListener('click',()=>{window.print();});
+    document.getElementById('downloadInvite').addEventListener('click',()=>{alert('To generate a PDF invite, implement server-side PDF generation (Puppeteer/Playwright or PDF library) or use client-side print-to-PDF.');});
+    document.getElementById('sendRsvpBtn').addEventListener('click',()=>{alert('Hook to your RSVP endpoint (POST) to collect guest responses and send confirmation emails.');});
+    document.getElementById('viewGoogle').addEventListener('click',()=>{window.open('https://www.google.com/search?q=VITA+Dentistry+Bagalkot','_blank');});
+
+    // If you want me to fetch the official "embed" iframe for you, say so and I will pull it from the Maps link and paste the exact src into setPlaceEmbed(...).
+    // Note: that requires visiting a JS-rendered page (Maps) and extracting the share->embed content. I can do that if you'd like.
+
+  </script>
 </body>
 </html>
